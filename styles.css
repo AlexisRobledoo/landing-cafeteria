@@ -1,0 +1,499 @@
+/* =========================================================
+   Café del Río — estilos
+   ========================================================= */
+
+/* 1) VARIABLES: los colores y medidas se definen una sola vez
+      y se reutilizan. Para cambiar la paleta, se toca solo acá. */
+:root {
+  --crema: #faf5ee;
+  --crema-oscura: #f1e7d8;
+  --cafe: #3b2418;
+  --cafe-medio: #6b4430;
+  --terracota: #c0622f;
+  --terracota-oscura: #a24f22;
+  --texto: #2b1d15;
+  --texto-suave: #6e5b4f;
+  --blanco: #ffffff;
+  --verde-wa: #25d366;
+
+  --radio: 14px;
+  --sombra: 0 6px 24px rgba(59, 36, 24, 0.08);
+  --ancho: 1100px;
+}
+
+/* 2) RESET: quita estilos raros que trae el navegador por defecto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   /* los links internos se deslizan suave */
+  scroll-padding-top: 72px;  /* para que el header fijo no tape los títulos */
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--crema);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.15;
+  color: var(--cafe);
+}
+
+h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; }
+
+a { color: inherit; }
+
+ul { list-style: none; }
+
+/* 3) CONTENEDOR: centra el contenido y limita el ancho */
+.container {
+  width: 100%;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: var(--terracota);
+  color: var(--blanco);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--terracota);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--terracota-oscura);
+  border-color: var(--terracota-oscura);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--crema);
+  border-color: var(--crema);
+}
+
+.btn--ghost:hover {
+  background: var(--crema);
+  color: var(--cafe);
+  border-color: var(--crema);
+}
+
+.btn--small {
+  padding: 0.45rem 1.1rem;
+}
+
+.btn--whatsapp {
+  background: var(--verde-wa);
+  border-color: var(--verde-wa);
+  color: #0b3d1f;
+  font-size: 1.1rem;
+}
+
+.btn--whatsapp:hover {
+  background: #1ebe5a;
+  border-color: #1ebe5a;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.header {
+  position: sticky;   /* queda fijo arriba al hacer scroll */
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 245, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--crema-oscura);
+}
+
+/* FLEXBOX: pone los elementos uno al lado del otro */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cafe);
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:not(.btn):hover {
+  color: var(--terracota);
+}
+
+/* Botón hamburguesa: oculto en pantallas grandes */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--cafe);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(192, 98, 47, 0.45), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(107, 68, 48, 0.6), transparent 50%),
+    var(--cafe);
+  color: var(--crema);
+  padding: 7rem 0 6rem;
+}
+
+.hero h1 {
+  color: var(--crema);
+  max-width: 14ch;
+  margin: 1rem 0 1.2rem;
+}
+
+.hero__text {
+  max-width: 50ch;
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Cartel "Abierto ahora / Cerrado" */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbb;
+}
+
+.status.abierto::before { background: var(--verde-wa); }
+.status.cerrado::before { background: #e5534b; }
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section--alt {
+  background: var(--crema-oscura);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--terracota);
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   MENÚ — GRID de tarjetas
+   ========================================================= */
+/* GRID: arma columnas automáticamente. Cada tarjeta mide mínimo 260px;
+   entran todas las que quepan por fila. Por eso es responsive "solo". */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--blanco);
+  padding: 1.6rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59, 36, 24, 0.14);
+}
+
+.card p {
+  color: var(--texto-suave);
+}
+
+.card__tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--crema-oscura);
+  color: var(--cafe-medio);
+}
+
+.card .card__price {
+  margin-top: auto;   /* empuja el precio al fondo de la tarjeta */
+  padding-top: 0.5rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--terracota);
+}
+
+.card__price small {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.card--highlight {
+  background: var(--cafe);
+}
+
+.card--highlight h3 { color: var(--crema); }
+.card--highlight p { color: rgba(250, 245, 238, 0.8); }
+.card--highlight .card__price { color: #f0a97c; }
+.card--highlight .card__tag { background: var(--terracota); color: var(--blanco); }
+
+/* =========================================================
+   NOSOTROS y HORARIOS — dos columnas
+   ========================================================= */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.split p {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+}
+
+.stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  background: var(--crema);
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radio);
+}
+
+.stats strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2rem;
+  color: var(--terracota);
+  min-width: 4.5ch;
+}
+
+.hours {
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--crema-oscura);
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--crema-oscura);
+}
+
+.hours li span:first-child {
+  font-weight: 600;
+}
+
+.split .address {
+  color: var(--texto);
+  font-weight: 500;
+}
+
+.map {
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  aspect-ratio: 4 / 3;
+  background: var(--crema-oscura);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================================
+   CONTACTO (CTA = "call to action", llamado a la acción)
+   ========================================================= */
+.cta {
+  background: var(--terracota);
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--blanco);
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: var(--cafe);
+  color: rgba(250, 245, 238, 0.85);
+  padding: 2.5rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer__note {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Botón flotante de WhatsApp */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--verde-wa);
+  color: var(--blanco);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.wa-float:hover {
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   RESPONSIVE: reglas que se aplican solo en pantallas chicas
+   (media query = "si la pantalla mide menos de X, hacé esto")
+   ========================================================= */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  /* El menú se esconde y aparece como panel desplegable */
+  .nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--crema);
+    border-bottom: 1px solid var(--crema-oscura);
+    display: none;
+  }
+
+  .nav.abierto {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 20px 1.2rem;
+  }
+
+  .nav li {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+
+  /* Animación de la hamburguesa a "X" */
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  /* Las dos columnas pasan a ser una */
+  .split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café del Río | Panadería y cafetería en Rosario</title>
+  <meta name="description" content="Panadería artesanal y café de especialidad en Rosario. Medialunas, budines y café recién molido. Pedí por WhatsApp y retirá en el local.">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Nuestro CSS (el diseño) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">Café del Río</a>
+
+      <!-- Botón "hamburguesa": solo se ve en el celular -->
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#horarios">Horarios</a></li>
+          <li><a href="#contacto" class="btn btn--small">Pedir</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero__inner">
+        <!-- El JS completa este cartel con "Abierto ahora" o "Cerrado" -->
+        <p class="status" id="estado">Horario del local</p>
+
+        <h1>Pan de masa madre y café recién molido</h1>
+        <p class="hero__text">
+          Panadería artesanal en Rosario. Horneamos todo en el día:
+          medialunas, budines y panes para tu desayuno o merienda.
+        </p>
+        <div class="hero__actions">
+          <a href="#menu" class="btn">Ver el menú</a>
+          <a href="#contacto" class="btn btn--ghost">Hacer un pedido</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MENÚ ================= -->
+    <section id="menu" class="section">
+      <div class="container">
+        <p class="eyebrow">Lo que horneamos</p>
+        <h2>Nuestro menú</h2>
+
+        <!-- "grid" = grilla de tarjetas. En el celular se ponen una abajo de otra -->
+        <div class="grid">
+          <article class="card">
+            <span class="card__tag">Panadería</span>
+            <h3>Medialunas de manteca</h3>
+            <p>Recién horneadas todas las mañanas, con almíbar.</p>
+            <p class="card__price">$ 900 <small>c/u</small></p>
+          </article>
+
+          <article class="card">
+            <span class="card__tag">Café</span>
+            <h3>Café con leche</h3>
+            <p>Granos de especialidad tostados en Rosario.</p>
+            <p class="card__price">$ 2.500</p>
+          </article>
+
+          <article class="card">
+            <span class="card__tag">Pastelería</span>
+            <h3>Budín de limón</h3>
+            <p>Receta de la casa, con glaseado de limón.</p>
+            <p class="card__price">$ 6.000</p>
+          </article>
+
+          <article class="card">
+            <span class="card__tag">Panadería</span>
+            <h3>Pan de masa madre</h3>
+            <p>Fermentación lenta de 24 horas. Corteza crocante.</p>
+            <p class="card__price">$ 4.800</p>
+          </article>
+
+          <article class="card">
+            <span class="card__tag">Pastelería</span>
+            <h3>Alfajor de maicena</h3>
+            <p>Con dulce de leche y coco rallado.</p>
+            <p class="card__price">$ 1.500</p>
+          </article>
+
+          <article class="card card--highlight">
+            <span class="card__tag">Combo</span>
+            <h3>Desayuno del Río</h3>
+            <p>Café con leche + 2 medialunas + jugo de naranja.</p>
+            <p class="card__price">$ 5.900</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section id="nosotros" class="section section--alt">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Nuestra historia</p>
+          <h2>Una panadería de barrio, como las de antes</h2>
+          <p>
+            Somos una panadería familiar que abrió sus puertas en 2015.
+            Trabajamos con masa madre, harina de molinos locales y
+            sin conservantes. Todo lo que ves en el mostrador se hizo hoy.
+          </p>
+        </div>
+
+        <ul class="stats">
+          <li><strong>2015</strong><span>abrimos el local</span></li>
+          <li><strong>24 h</strong><span>de fermentación</span></li>
+          <li><strong>100%</strong><span>hecho en el día</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= HORARIOS Y UBICACIÓN ================= -->
+    <section id="horarios" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Vení a visitarnos</p>
+          <h2>Horarios y ubicación</h2>
+
+          <ul class="hours">
+            <li><span>Lunes a viernes</span><span>7:00 – 20:00</span></li>
+            <li><span>Sábados</span><span>8:00 – 14:00</span></li>
+            <li><span>Domingos</span><span>Cerrado</span></li>
+          </ul>
+
+          <p class="address">📍 Calle Ficticia 1234, Rosario, Santa Fe</p>
+        </div>
+
+        <!-- Mapa de Google embebido (iframe = una página dentro de otra) -->
+        <div class="map">
+          <iframe
+            title="Mapa de ubicación"
+            src="https://www.google.com/maps?q=Rosario,+Santa+Fe,+Argentina&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="section cta">
+      <div class="container cta__inner">
+        <h2>¿Te guardamos algo?</h2>
+        <p>Escribinos por WhatsApp y te dejamos tu pedido listo para retirar.</p>
+        <!-- wa.me abre un chat de WhatsApp. ?text= es el mensaje que ya aparece escrito -->
+        <a class="btn btn--whatsapp"
+           href="https://wa.me/5493410000000?text=Hola%20Caf%C3%A9%20del%20R%C3%ADo!%20Quiero%20hacer%20un%20pedido"
+           target="_blank" rel="noopener">
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="anio">2026</span> Café del Río · Rosario, Santa Fe</p>
+      <p class="footer__note">Proyecto de portfolio — negocio ficticio. Diseño y desarrollo: Alexis.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (siempre visible abajo a la derecha) -->
+  <a class="wa-float"
+     href="https://wa.me/5493410000000?text=Hola%20Caf%C3%A9%20del%20R%C3%ADo!"
+     target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8C29 8.7 23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.1 16 5.1s11 4.8 11 10.7-4.9 10.6-11 10.6zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/>
+    </svg>
+  </a>
+
+  <!-- Nuestro JavaScript (el comportamiento) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
