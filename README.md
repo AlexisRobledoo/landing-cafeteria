@@ -1,8 +1,8 @@
-# ☕ Café del Río — Landing page para cafetería
+# Café del Río — Landing page para cafetería
 
 Landing page para una panadería y cafetería **ficticia** de Rosario, Santa Fe. Es un proyecto de portfolio pensado como ejemplo del tipo de sitio que puede necesitar un comercio local.
 
-🔗 **Demo:** https://alexisrobledoo.github.io/landing-cafeteria/
+**Demo:** https://alexisrobledoo.github.io/landing-cafeteria/
 
 ## Características
 
